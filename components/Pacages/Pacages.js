@@ -67,8 +67,12 @@ const PacagesWrapper = styled.section`
     rgba(9, 121, 114, 0.023144291896446068) 35%,
     rgba(0, 212, 255, 1) 150%
   ); */
-  background: rgba(234, 234, 234, 0.1);
-  backdrop-filter: blur(150px);
+  background: linear-gradient(
+    45deg,
+    rgba(137, 255, 255, 0.5),
+    rgba(161, 252, 143, 0.25),
+    rgba(255, 167, 137, 1)
+  );
 `;
 const Title = styled.h2`
   font-weight: 600;
