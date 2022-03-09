@@ -12,7 +12,6 @@ import bg from "../../assets/bg.png";
 const Pacages = () => {
   return (
     <PacagesWrapper>
-      {/* <Image src={bg} alt="" /> ; */}
       <div className="container">
         <Title>Пакеты</Title>
         <GroupImg>
@@ -49,13 +48,15 @@ const Pacages = () => {
             </p>
           </button>
         </GroupImg>
-
         <Text>
-          Мы можем оказать содействие на всех этапах исследования, начиная от
-          разработки методологии , поиска информантов , сбора данных и
-          заканчивая написанием отчета. Также в рамках данной услуги есть
-          отличная возможность изучить регион Центральной Азии , ее культуру и
-          природу.
+          <p>
+            Мы можем оказать содействие на всех этапах исследования,
+            <span> начиная от разработки методологии </span>,поиска информантов
+            , сбора данных и заканчивая написанием отчета. Также в рамках данной
+            услуги есть отличная
+            <span> возможность изучить регион Центральной Азии</span> , ее
+            культуру и природу.
+          </p>
         </Text>
       </div>
     </PacagesWrapper>
@@ -64,20 +65,8 @@ const Pacages = () => {
 export default Pacages;
 
 const PacagesWrapper = styled.section`
-  /* background: linear-gradient(90deg #bed062 50%, #778c0b 40%, #eaeaea 10%); */
-  /* background: linear-gradient(
-    to top left,
-    rgba(2, 0, 36, 1) -10%,
-    rgba(9, 121, 114, 0.023144291896446068) 35%,
-    rgba(0, 212, 255, 1) 150%
-  ); */
-  /* background: linear-gradient(
-    45deg,
-    rgba(137, 255, 255, 0.5),
-    rgba(161, 252, 143, 0.25),
-    rgba(255, 167, 137, 1)
-  ); */
-  /* position: absolute; */
+  background-image: url(${bg});
+  background-color: green;
 `;
 const Title = styled.h2`
   font-weight: 600;
@@ -120,7 +109,7 @@ const GroupImg = styled.div`
     }
   }
 `;
-const Text = styled.span`
+const Text = styled.div`
   display: inline;
 
   margin: 72px 0 146px;
@@ -132,7 +121,7 @@ const Text = styled.span`
   letter-spacing: 0.02em;
   color: #505050;
 
-  .textColor {
+  span {
     color: #7f9d1b;
   }
 `;
