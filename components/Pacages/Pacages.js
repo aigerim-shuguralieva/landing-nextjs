@@ -7,10 +7,12 @@ import img3 from "../../assets/Img3.svg";
 import img4 from "../../assets/Img4.svg";
 import img5 from "../../assets/Img5.svg";
 import img6 from "../../assets/Img6.svg";
+import bg from "../../assets/bg.png";
 
 const Pacages = () => {
   return (
     <PacagesWrapper>
+      {/* <Image src={bg} alt="" /> ; */}
       <div className="container">
         <Title>Пакеты</Title>
         <GroupImg>
@@ -40,18 +42,20 @@ const Pacages = () => {
             <p>Культурные, экологические туры по Центральной Азии</p>
           </button>
           <button>
-            <Image src={img6} alt="" />
+            <Image className="img6" src={img6} alt="" />
             <br />
             <p>
               Исследование+культурный/экологический туризм в других странах ЦА
             </p>
           </button>
         </GroupImg>
+
         <Text>
           Мы можем оказать содействие на всех этапах исследования, начиная от
-          разработки методологии , поиска информантов, сбора данных и заканчивая
-          написанием отчета. Также в рамках данной услуги есть отличная
-          возможность изучить регион Центральной Азии , ее культуру и природу.
+          разработки методологии , поиска информантов , сбора данных и
+          заканчивая написанием отчета. Также в рамках данной услуги есть
+          отличная возможность изучить регион Центральной Азии , ее культуру и
+          природу.
         </Text>
       </div>
     </PacagesWrapper>
@@ -67,12 +71,13 @@ const PacagesWrapper = styled.section`
     rgba(9, 121, 114, 0.023144291896446068) 35%,
     rgba(0, 212, 255, 1) 150%
   ); */
-  background: linear-gradient(
+  /* background: linear-gradient(
     45deg,
     rgba(137, 255, 255, 0.5),
     rgba(161, 252, 143, 0.25),
     rgba(255, 167, 137, 1)
-  );
+  ); */
+  /* position: absolute; */
 `;
 const Title = styled.h2`
   font-weight: 600;
@@ -86,6 +91,8 @@ const GroupImg = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-right: 20px;
+
   button {
     width: 440px;
     height: 440px;
@@ -94,8 +101,10 @@ const GroupImg = styled.div`
     border-radius: 54px;
     border: none;
     padding: 0;
-    margin: 42px 0 107px;
+    margin: 42px 0px 107px 50px;
+    position: relative;
   }
+
   p {
     font-family: Gilroy;
     font-size: 24px;
@@ -113,6 +122,8 @@ const GroupImg = styled.div`
 `;
 const Text = styled.span`
   display: inline;
+
+  margin: 72px 0 146px;
   font-weight: 500;
   font-size: 24px;
   line-height: 29px;
@@ -120,8 +131,8 @@ const Text = styled.span`
   align-items: center;
   letter-spacing: 0.02em;
   color: #505050;
-  margin: 72px 0 146px;
-  span {
+
+  .textColor {
     color: #7f9d1b;
   }
 `;

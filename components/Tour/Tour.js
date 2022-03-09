@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Img from "../../assets/GroupTour.svg";
 import Image from "next/image";
+import { CustomButton } from "../Custom/CustomButton";
+import { InputCustom } from "../Custom/InputCustom";
 
 const Tour = () => {
   return (
@@ -23,9 +25,9 @@ const Tour = () => {
           <TourForm>
             <div className="title">Свяжитесь с нами</div>
             <div className="form_group">
-              <input placeholder="Email" />
-              <input placeholder="ФИО" />
-              <button>Оставить заявку</button>
+              <InputCustom primary placeholder="Email" />
+              <InputCustom primary placeholder="ФИО" />
+              <CustomButton>Оставить заявку</CustomButton>
             </div>
           </TourForm>
         </div>
@@ -60,6 +62,7 @@ const Title = styled.div`
     margin-bottom: 30px;
     .textColor {
       color: #a5b74c;
+      margin-top: 15px;
     }
   }
   p {
@@ -68,6 +71,7 @@ const Title = styled.div`
     line-height: 22px;
     color: #3d3c3c;
     padding-top: 30px;
+    margin-top: 15px;
   }
 `;
 const TourForm = styled.div`
@@ -86,41 +90,6 @@ const TourForm = styled.div`
     color: #1c1c1c;
     margin-top: 225px;
     margin-bottom: 60px;
-  }
-
-  input {
-    padding: 13px 38px;
-    border: 0.739726px solid #1c1c1c;
-    box-sizing: border-box;
-    border-radius: 72px;
-    margin-right: 12px;
-
-    background: white;
-    outline: none;
-    ::placeholder {
-      color: #1c1c1c;
-      font-size: 1.5em;
-      text-align: center;
-      font-size: 18px;
-      line-height: 22px;
-      letter-spacing: 0.02em;
-      color: #1c1c1c;
-    }
-  }
-
-  button {
-    padding: 13px 38px;
-    background: linear-gradient(180.78deg, #1c1c1c 1.35%, #111111 96.41%);
-    border-radius: 72px;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.02em;
-    color: #ffffff;
-    border: none;
   }
 `;
 const TourImg = styled.div`

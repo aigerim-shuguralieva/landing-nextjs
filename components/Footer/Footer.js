@@ -2,7 +2,10 @@ import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 import Logo from "../../assets/Group.svg";
-const Footer = () => {
+import { CustomButton } from "../Custom/CustomButton";
+import { InputCustom } from "../Custom/InputCustom";
+
+const Footer = (props) => {
   return (
     <FooterWrapper>
       <div className="container">
@@ -17,9 +20,9 @@ const Footer = () => {
           <FooterForm>
             <div className="title">Связаться с нами</div>
             <div className="form_group">
-              <input placeholder="Email" />
-              <input placeholder="ФИО" />
-              <button>Оставить заявку</button>
+              <InputCustom placeholder="Email" active />
+              <InputCustom placeholder="ФИО" active />
+              <CustomButton>Оставить заявку</CustomButton>
             </div>
           </FooterForm>
           <FooterLogo>
@@ -66,41 +69,6 @@ const FooterForm = styled.form`
   .form_group {
     display: flex;
     align-items: center;
-  }
-
-  input {
-    padding: 13px 38px;
-    border: 0.739726px solid #ffffff;
-    box-sizing: border-box;
-    border-radius: 72px;
-    margin-right: 12px;
-    background: #494949;
-    outline: none;
-
-    ::placeholder {
-      color: blue;
-      font-size: 1.5em;
-      text-align: center;
-      font-size: 18px;
-      line-height: 22px;
-      letter-spacing: 0.02em;
-      color: #ffffff;
-    }
-  }
-
-  button {
-    padding: 13px 38px;
-    background: linear-gradient(180.78deg, #1c1c1c 1.35%, #111111 96.41%);
-    border-radius: 72px;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.02em;
-    color: #ffffff;
-    border: none;
   }
 `;
 const FooterLogo = styled.div``;
