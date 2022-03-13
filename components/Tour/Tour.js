@@ -33,7 +33,9 @@ const Tour = () => {
         </div>
         <div>
           <TourImg>
-            <Image src={Img} alt="picture" width="650px" height="600px" />
+            <div className="img">
+              <Image src={Img} alt="picture" />
+            </div>
           </TourImg>
         </div>
       </SectionWrapper>
@@ -47,6 +49,9 @@ const SectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 const Title = styled.div`
   display: inline-block;
@@ -64,6 +69,17 @@ const Title = styled.div`
       color: #a5b74c;
       margin-top: 15px;
     }
+    @media (max-width: 768px) {
+      width: 348px;
+      height: 62px;
+
+      font-weight: 500;
+      font-size: 34px;
+      line-height: 34px;
+      .textColor {
+        margin: -5px 0 20px;
+      }
+    }
   }
   p {
     font-weight: normal;
@@ -72,9 +88,20 @@ const Title = styled.div`
     color: #3d3c3c;
     padding-top: 30px;
     margin-top: 15px;
+    @media (max-width: 768px) {
+      width: 309px;
+      height: 78px;
+
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 21px;
+    }
   }
 `;
 const TourForm = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
   .form_group {
     display: flex;
     align-items: center;
@@ -94,4 +121,14 @@ const TourForm = styled.div`
 `;
 const TourImg = styled.div`
   display: flex;
+  .img {
+    width: 650px;
+    height: 600px;
+  }
+  @media (max-width: 768px) {
+    width: 379px;
+    height: 273px;
+
+    margin-top: 80px;
+  }
 `;

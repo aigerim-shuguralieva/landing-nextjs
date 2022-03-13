@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Logo from "../../assets/Logo.svg";
 import InputIconSvg from "../../assets/search-normal.svg";
 import { headerLinks } from "../Header/HeaderLinks";
+import Burger from "../../assets/burger.svg";
 const Header = () => {
   return (
     <div className="container">
@@ -24,8 +25,16 @@ const Header = () => {
             <input />
           </div>
           <div className="language_wrap">
-            EN <span>|</span> RU
+            <div className="input_icon">
+              <Image src={InputIconSvg} alt="" />
+            </div>
+            <div>
+              EN <span>|</span> RU
+            </div>
           </div>
+          <BurgerWrap>
+            <Image src={Burger} alt="" />
+          </BurgerWrap>
         </SearchAndLanguage>
       </HedaerWrapper>
     </div>
@@ -40,9 +49,16 @@ const HedaerWrapper = styled.header`
   align-items: center;
   padding: 20px 0;
 `;
-const LogoContent = styled.div``;
+const LogoContent = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
 const HeaderItems = styled.ul`
   display: flex;
+  @media (max-width: 768px) {
+    display: none;
+  }
 
   li {
     list-style: none;
@@ -52,6 +68,10 @@ const HeaderItems = styled.ul`
 const SearchAndLanguage = styled.div`
   display: flex;
   align-items: center;
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: space-between;
+  }
   .search_wrap {
     position: relative;
     input {
@@ -61,14 +81,34 @@ const SearchAndLanguage = styled.div`
       padding: 7px 0 7px 35px;
       width: 250px;
     }
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   .language_wrap {
     margin-left: 50px;
+    @media (max-width: 768px) {
+      display: flex;
+    }
+    .input_icon {
+      display: none;
+      @media (max-width: 768px) {
+        display: block;
+        margin-right: 15px;
+      }
+    }
   }
 `;
 const InputIcon = styled.div`
   position: absolute;
   top: 3px;
   left: 8px;
+`;
+
+const BurgerWrap = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;

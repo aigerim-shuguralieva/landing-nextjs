@@ -1,62 +1,51 @@
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
-import img1 from "../../assets/Img1.svg";
-import img2 from "../../assets/Img2.svg";
-import img3 from "../../assets/Img3.svg";
-import img4 from "../../assets/Img4.svg";
-import img5 from "../../assets/Img5.svg";
-import img6 from "../../assets/Img6.svg";
-import bg from "../../assets/bg.png";
+import PackageBg from "../../assets/bg.png";
+import { pacageCards } from "./PacageCards";
+import MobileBg from "../../assets/mobile_bg.png";
 
 const Pacages = () => {
   return (
     <PacagesWrapper>
+      <div className="background_image">
+        <Image alt="" src={PackageBg} />
+      </div>
+      <div className="mobile_bg">
+        <Image src={MobileBg} alt="" />
+      </div>
       <div className="container">
-        <Title>Пакеты</Title>
+        <div>
+          <Title>Пакеты</Title>
+          <p className="mobile_text">
+            Мы можем оказать содействие на всех этапах исследования, начиная от
+            разработки методологии , поиска информантов, сбора данных и
+            заканчивая написанием отчета. Также в рамках данной услуги есть
+            отличная возможность изучить регион Центральной Азии, ее культуру и
+            природу.
+          </p>
+        </div>
         <GroupImg>
-          <button>
-            <Image src={img1} alt="" />
-            <br />
-            <p className="text">Исследование в Кыргызстане</p>
-          </button>
-          <button>
-            <Image src={img2} alt="" />
-            <br />
-            <p>Культурные, экологические туры по Кыргызстану</p>
-          </button>
-          <button>
-            <Image src={img3} alt="" />
-            <br />
-            <p>Исследование+культурный/экологический туризм в Кыргызстане</p>
-          </button>
-          <button>
-            <Image src={img4} alt="" />
-            <br />
-            <p>Исследование в Центральной Азии</p>
-          </button>
-          <button>
-            <Image src={img5} alt="" />
-            <br />
-            <p>Культурные, экологические туры по Центральной Азии</p>
-          </button>
-          <button>
-            <Image className="img6" src={img6} alt="" />
-            <br />
-            <p>
-              Исследование+культурный/экологический туризм в других странах ЦА
-            </p>
-          </button>
+          {pacageCards.map((item, index) => {
+            return (
+              <div className="packages_card" key={index}>
+                <Image className="image_card" src={item.image} alt="" />
+                <p>{item.text}</p>
+              </div>
+            );
+          })}
         </GroupImg>
         <Text>
-          <p>
-            Мы можем оказать содействие на всех этапах исследования,
-            <span> начиная от разработки методологии </span>,поиска информантов
-            , сбора данных и заканчивая написанием отчета. Также в рамках данной
-            услуги есть отличная
-            <span> возможность изучить регион Центральной Азии</span> , ее
-            культуру и природу.
-          </p>
+          <div>
+            <p>
+              Мы можем оказать содействие на всех этапах исследования, начиная
+              <span> от разработки методологии </span>, поиска информантов,
+              сбора данных и заканчивая написанием отчета. Также в рамках данной
+              услуги есть отличная
+              <span> возможность изучить регион Центральной Азии</span> , ее
+              культуру и природу.
+            </p>
+          </div>
         </Text>
       </div>
     </PacagesWrapper>
@@ -65,8 +54,42 @@ const Pacages = () => {
 export default Pacages;
 
 const PacagesWrapper = styled.section`
-  background-image: url(${bg});
-  background-color: green;
+  padding: 120px 0;
+  min-height: 100%;
+  padding-bottom: 37px;
+  position: relative;
+  z-index: 1000;
+  .background_image {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0;
+    width: 100%;
+    bottom: 0;
+    /* width: 100vw; */
+    /* height: 100vh; */
+    height: 100%;
+    z-index: 1;
+    @media (max-width: 900px) {
+      display: none;
+    }
+  }
+  .mobile_bg {
+    display: none;
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0;
+      width: 100%;
+      bottom: 0;
+      /* width: 100vw; */
+      /* height: 100vh; */
+      height: 100%;
+      z-index: 1;
+      background-color: red;
+    }
+  }
 `;
 const Title = styled.h2`
   font-weight: 600;
@@ -74,15 +97,31 @@ const Title = styled.h2`
   line-height: 61px;
   letter-spacing: 0.02em;
   color: #313131;
-  margin: 47px 0 42px;
+
+  position: relative;
+  z-index: 1000;
+
+  @media (max-width: 768px) {
+    .mobile_text {
+      width: 343px;
+      height: 120px;
+      left: 31px;
+      top: 771px;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 21px;
+      color: #5f5f5f;
+    }
+  }
 `;
 const GroupImg = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-right: 20px;
-
-  button {
+  position: relative;
+  z-index: 1000;
+  .packages_card {
     width: 440px;
     height: 440px;
     background: #ffffff;
@@ -90,10 +129,12 @@ const GroupImg = styled.div`
     border-radius: 54px;
     border: none;
     padding: 0;
-    margin: 42px 0px 107px 50px;
-    position: relative;
+    margin: 42px 0 107px;
+    &:last-child {
+      top: 50px;
+      left: 120px;
+    }
   }
-
   p {
     font-family: Gilroy;
     font-size: 24px;
@@ -104,15 +145,16 @@ const GroupImg = styled.div`
     letter-spacing: 0.02em;
     color: #1c1c1c;
     padding: 20px 40px 60px;
-    &.text {
-      padding-top: 34px;
-    }
+    word-wrap: wrap;
+    white-space: pre-wrap;
+  }
+  Image:last-child {
+    top: 50px;
+    left: 120px;
   }
 `;
-const Text = styled.div`
+const Text = styled.span`
   display: inline;
-
-  margin: 72px 0 146px;
   font-weight: 500;
   font-size: 24px;
   line-height: 29px;
@@ -120,7 +162,10 @@ const Text = styled.div`
   align-items: center;
   letter-spacing: 0.02em;
   color: #505050;
-
+  margin: 72px 0 146px;
+  @media (max-width: 768px) {
+    display: none;
+  }
   span {
     color: #7f9d1b;
   }

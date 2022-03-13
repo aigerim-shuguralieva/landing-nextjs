@@ -45,6 +45,10 @@ const FooterInner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) {
+    display: block;
+    margin: auto;
+  }
   .title {
     font-weight: 600;
     font-size: 28px;
@@ -69,6 +73,10 @@ const FooterForm = styled.form`
   .form_group {
     display: flex;
     align-items: center;
+    @media (max-width: 768px) {
+      display: inline;
+      margin-bottom: 8px;
+    }
   }
 `;
 const FooterLogo = styled.div``;
