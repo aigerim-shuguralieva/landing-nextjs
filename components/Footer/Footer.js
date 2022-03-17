@@ -46,7 +46,9 @@ const FooterInner = styled.div`
   justify-content: space-between;
   align-items: center;
   @media (max-width: 768px) {
-    display: block;
+    /* display: block; */
+    flex-direction: column;
+    align-items: flex-start;
     margin: auto;
   }
   .title {
@@ -59,6 +61,9 @@ const FooterInner = styled.div`
 `;
 const Contacts = styled.div`
   max-width: 360px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
   p {
     font-weight: 500;
     font-size: 16px;
@@ -70,13 +75,31 @@ const Contacts = styled.div`
   }
 `;
 const FooterForm = styled.form`
+  .title {
+    @media (max-width: 768px) {
+      margin-top: 30px;
+      width: 90%;
+    }
+  }
   .form_group {
     display: flex;
     align-items: center;
+
     @media (max-width: 768px) {
-      display: inline;
+      flex-direction: column;
       margin-bottom: 8px;
+      input {
+        margin-bottom: 20px;
+      }
+      button {
+        width: 100%;
+        text-align: center;
+      }
     }
   }
 `;
-const FooterLogo = styled.div``;
+const FooterLogo = styled.div`
+  @media (max-width: 768px) {
+    margin-top: 30px;
+  }
+`;

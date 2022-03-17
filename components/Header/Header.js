@@ -71,6 +71,7 @@ const SearchAndLanguage = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     justify-content: space-between;
+    margin-top: 65px;
   }
   .search_wrap {
     position: relative;
@@ -90,6 +91,7 @@ const SearchAndLanguage = styled.div`
     margin-left: 50px;
     @media (max-width: 768px) {
       display: flex;
+      margin-left: 0;
     }
     .input_icon {
       display: none;
@@ -110,5 +112,6 @@ const BurgerWrap = styled.div`
   display: none;
   @media (max-width: 768px) {
     display: block;
+    margin-left: 0;
   }
 `;

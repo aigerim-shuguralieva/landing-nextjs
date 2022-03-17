@@ -63,7 +63,7 @@ const Title = styled.div`
     line-height: 21px;
     letter-spacing: -0.02em;
     color: #313131;
-    margin-top: 146px;
+    margin-top: 105px;
     margin-bottom: 30px;
     .textColor {
       color: #a5b74c;
@@ -72,7 +72,6 @@ const Title = styled.div`
     @media (max-width: 768px) {
       width: 348px;
       height: 62px;
-
       font-weight: 500;
       font-size: 34px;
       line-height: 34px;
