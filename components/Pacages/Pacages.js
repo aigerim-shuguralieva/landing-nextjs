@@ -251,15 +251,16 @@ const PacagesWrapper = styled.section`
     display: none;
     @media (max-width: 768px) {
       position: absolute;
-      top: 0px;
+      background: red;
+      /* top: 0px;
       left: 0px;
       right: 0;
       width: 100%;
-      bottom: 0;
-      /* width: 100vw; */
-      /* height: 100vh; */
-      height: 100%;
-      z-index: 1;
+      bottom: 0; */
+      width: 100vw;
+      height: 100vh;
+      /* height: 100%;
+      z-index: 1; */
     }
   }
 `;
@@ -284,6 +285,7 @@ const Title = styled.h2`
       font-size: 12px;
       line-height: 21px;
       color: #5f5f5f;
+      margin-top: 25px;
     }
   }
 `;
